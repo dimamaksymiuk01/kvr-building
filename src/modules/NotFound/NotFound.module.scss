@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 50px;
+  h2 {
+    margin: 0;
+    text-align: center;
+  }
+  h3 {
+    margin-top: 5px;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .imgContainer {
+    display: flex;
+    justify-content: center;
+  }
+  .btnContainer {
+    display: flex;
+    justify-content: center;
+    button {
+      font-size: 16px !important;
+    }
+  }
+}

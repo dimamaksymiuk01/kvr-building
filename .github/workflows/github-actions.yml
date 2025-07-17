@@ -1,0 +1,46 @@
+name: Frontend-test 🧪
+
+on:
+  workflow_call:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    types:
+      - opened
+      - synchronize
+  workflow_dispatch:
+
+jobs:
+  Frontend-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🔄 Checkout repository
+        uses: actions/checkout@v3
+      - name: ⚙️ Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18.x
+
+      - name: 📦 Install pnpm
+        run: npm install -g pnpm
+
+      - name: 🗃 Cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.pnpm
+          key: node-modules-${{ hashFiles('**.package-lock.json') }}
+
+      - name: 📦 Install dependencies
+        run: pnpm i
+
+      - name: ⚙️ Run build
+        run: pnpm run build
+
+      - name: 📝 Run tests
+        run: pnpm run test
+
+      - name: 💿 Run lint
+        run: pnpm run lint

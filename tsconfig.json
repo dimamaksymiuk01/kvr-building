@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,9 +23,46 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@components/*": [
+        "./src/common/components/*"
+      ],
+      "@styles/*": [
+        "./src/common/styles/*"
+      ],
+      "@hooks/*": [
+        "./src/common/hooks/*"
+      ],
+      "@enums/*": [
+        "./src/common/enums/*"
+      ],
+      "@utils/*": [
+        "./src/common/utils/*"
+      ],
+      "@constants/*": [
+        "./src/common/constants/*"
+      ],
+      "@i18n/*": [
+        "./src/i18n/*"
+      ],
+      "@types/*": [
+        "./src/common/types/type",
+      ],
+      "@interface/*": [
+        "./src/common/types/interface/*",
+      ],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "next.config.js"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
