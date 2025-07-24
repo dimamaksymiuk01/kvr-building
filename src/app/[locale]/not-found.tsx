@@ -1,5 +1,8 @@
-import { NotFound } from '@/modules';
-
-export default function NotFoundPage() {
-  return <NotFound />;
+export default function NotFound() {
+  return (
+    <div style={{ padding: '2rem', textAlign: 'center' }}>
+      <h1>404 - Strona nie została znaleziona</h1>
+      <p>Nie możemy znaleźć strony, której szukasz.</p>
+    </div>
+  );
 }
